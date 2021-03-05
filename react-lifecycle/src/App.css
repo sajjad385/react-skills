@@ -1,0 +1,8 @@
+.product-list{
+  border: 1px solid red;
+  width:200px;
+  min-height: 200px;
+  margin:10px;
+  float:left;
+  padding:10px;
+}
