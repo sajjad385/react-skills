@@ -1,34 +1,16 @@
-    import React, { useEffect, useState } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
+const ProductDetails = ({ productList }) => {
+  const param = useParams();
+  const details = productList[param.id];
 
-    const ProductDetails = ({ product }) => {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-        setLoading(false);
-        }, 1000);
-    });
-    return (
-        <>
-        {loading === true ? (
-            <div>
-            <img
-                src={
-                "https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif"
-                }
-                alt={""}
-                style={{ width: "100%", height: "100vh" }}
-            />
-            </div>
-        ) : (
-            <div>
-            <p>Product Name: {product.name}</p>
-            <p>Product Description: {product.description}</p>
-            <p>Product Category: {product.category}</p>
-            <p>Product Price: {product.price}</p>
-            </div>
-        )}
-        </>
-    );
-    };
-    export default ProductDetails;
+  return (
+    <div>
+      <p>Product Name: {details.name}</p>
+      <p>Product Description: {details.description}</p>
+      <p>Product Category: {details.category}</p>
+      <p>Product Price: {details.price}</p>
+    </div>
+  );
+};
+export default ProductDetails;

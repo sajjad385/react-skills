@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import Product from "./component/Product";
 import ProductDetails from "./component/ProductDetails";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
+
 function App() {
-  var product = "";
-  const [singleProduct, setSingleProduct] = useState("");
   const [productList, setProducts] = useState([
     {
       name: "Product Name 1",
@@ -26,29 +32,29 @@ function App() {
     },
   ]);
 
-  const handleClick = (productIndex) => {
-    if (productIndex !== "") {
-      product = productList.find((element, index) => index === productIndex);
-    }
-    setSingleProduct(product);
-  };
-
   return (
-    <div>
-      {singleProduct === "" ? (
-        <div>
-          <p>Welcome Home</p>
-          <Product productList={productList} clickHandler={handleClick} />
-        </div>
-      ) : (
-        <div>
-          <p 
-          style={{color: "green" }}
-           onClick={()=>handleClick("")}>Back to Home</p>
-          <ProductDetails product={singleProduct} />
-        </div>
-      )}
-    </div>
+    <Router>
+      <Link to="/">Home</Link>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <Link to="/404">404</Link>
+      <Switch>
+        <Route exact path="/">
+          <Product productList={productList} />
+        </Route>
+        <Route exact path="/product-details/:id">
+          <ProductDetails productList={productList} />
+        </Route>
+        <Route exact path="/404">
+          <p>404 Page</p>
+        </Route>
+        <Route exact path="*" render={() => <Redirect to="/404" />} />
+      </Switch>
+    </Router>
   );
 }
 

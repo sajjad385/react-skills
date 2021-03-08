@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
-const Product = ({ productList, clickHandler }) => {
+import { useHistory } from "react-router-dom";
+const Product = ({ productList }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -8,6 +8,11 @@ const Product = ({ productList, clickHandler }) => {
       setLoading(false);
     }, 1000);
   });
+  const history = useHistory();
+
+  const handleChange = (id) => {
+    history.push(`/product-details/${id}`);
+  };
 
   return (
     <div>
@@ -23,12 +28,11 @@ const Product = ({ productList, clickHandler }) => {
         </div>
       ) : (
         productList.map((product, index) => (
-          
           <div className="product-list" key={index}>
             <p>{product.name}</p>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <button onClick={() => clickHandler(index)}>Show Details</button>
+            <button onClick={() => handleChange(index)}>Show Details</button>
           </div>
         ))
       )}
