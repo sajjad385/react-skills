@@ -1,20 +1,18 @@
 import axios from "axios";
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const ProductCreate = () => {
 
+    const history = useHistory();
     const [productState, setProductState] = useState({
         title: "",
         description: "",
         price: ""
     });
     const handleSubmit = () => {
-
-
-        console.log(productState)
-
         axios.post("http://localhost:8000/api/product/store", productState).then((response) => {
-            console.log(response)
+            history.push('/');
         }).catch((error) => {
             console.log(error.response);
         });
@@ -22,7 +20,6 @@ const ProductCreate = () => {
 
     return (
         <div>
-
             <input
                 name="title"
                 type="text"
