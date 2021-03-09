@@ -1,0 +1,8 @@
+table,th,tr,td{
+    border:1px solid red;
+    border-collapse: collapse;
+    margin:0 auto;
+}
+table {
+    width: 80%;
+    }
