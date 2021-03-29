@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import Product from "./component/products/";
-import ProductCreate from "./component/products/create.js";
-
+import Product from "./component/client/Product";
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,22 +8,44 @@ import {
     Redirect,
 } from "react-router-dom";
 import "./App.css";
-import ProductEdit from "./component/products/edit";
+import ProductDetails from "./component/client/ProductDetails";
+import Cart from "./component/client/Cart";
 
 function App() {
+    const [productList, setProducts] = useState([
+        {
+            name: "Product Name 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            price: "102",
+            category: "LifeStyle",
+        },
+        {
+            name: "Product Name 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            price: "120",
+            category: "Home and Decorator",
+        },
+        {
+            name: "Product Name 3",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            price: "100",
+            category: "Electronics",
+        },
+    ]);
+
     return (
         <Router>
             <Link to="/">Home</Link>
-            <Link to="/create">Create</Link>
+            <Link to="/cart">Cart</Link>
             <Switch>
                 <Route exact path="/">
-                    <Product/>
+                    <Product productList={productList}/>
                 </Route>
-                <Route exact path="/create">
-                    <ProductCreate/>
+                <Route exact path="/product-details/:id">
+                    <ProductDetails productList={productList}/>
                 </Route>
-                <Route exact path="/edit/:id">
-                    <ProductEdit/>
+                <Route exact path="/cart">
+                    <Cart/>
                 </Route>
                 <Route exact path="/404">
                     <p>404 Page</p>
