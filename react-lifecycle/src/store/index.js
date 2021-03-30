@@ -1,16 +1,10 @@
-import {createStore} from "redux";
+import {createStore, combineReducers} from "redux";
+import CartReducer from "./Reducer/cartReducer";
+import ProductReducer from "./Reducer/productReducer";
 
-const INITIAL_STATE = {}
-
-const CartReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case 'ADD_TO_CART':
-            return {
-                ...state, cart : action.payload
-            }
-        default:
-            return INITIAL_STATE;
-    }
-}
-const store = createStore(CartReducer);
-export  default store;
+const mainReducer = combineReducers({
+    cartStore: CartReducer,
+    productStore: ProductReducer
+})
+const store = createStore(mainReducer);
+export default store;
