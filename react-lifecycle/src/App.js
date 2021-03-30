@@ -14,7 +14,7 @@ import {useSelector} from "react-redux";
 
 
 function App() {
-    const cartStore = useSelector((state) => state)
+    const cartStore = useSelector((fullState) => fullState)
     console.log(cartStore);
     const [productList, setProducts] = useState([
         {

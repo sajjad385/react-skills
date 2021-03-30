@@ -7,7 +7,7 @@ const Cart = () => {
     return (
         <Container>
             Your Cart
-            <p>Cart items: {cartStore.cart}</p>
+            <p>Cart items: {cartStore.cartStore.cart}</p>
         </Container>
     )
 }
