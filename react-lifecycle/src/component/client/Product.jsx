@@ -12,8 +12,10 @@ import {
     Typography
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import {useDispatch, useSelector} from "react-redux";
 
 const Product = ({productList}) => {
+    const cartStore = useSelector(state => state)
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 4,
@@ -42,6 +44,13 @@ const Product = ({productList}) => {
     const handleChange = (id) => {
         history.push(`/product-details/${id}`);
     };
+    const dispatch = useDispatch();
+    const addToCart =()=>{
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: cartStore.cart ?cartStore.cart +1: 1
+        })
+    }
 
     return (
         <Container>
@@ -82,7 +91,7 @@ const Product = ({productList}) => {
                                             </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                            <Button size="small" color="primary">
+                                            <Button size="small" color="primary" onClick={addToCart}>
                                                 Add To Cart
                                             </Button>
                                             <Button size="small" color="secondary" onClick={() => handleChange(index)}>

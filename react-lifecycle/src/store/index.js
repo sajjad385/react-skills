@@ -6,11 +6,11 @@ const CartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
             return {
-                ...state, ...action.payload
+                ...state, cart : action.payload
             }
         default:
             return INITIAL_STATE;
-
     }
 }
-export  default createStore(CartReducer);
+const store = createStore(CartReducer);
+export  default store;

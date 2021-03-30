@@ -1,11 +1,13 @@
 import React from "react";
 import {Container} from "@material-ui/core";
+import {useSelector} from "react-redux";
 
 const Cart = () => {
+    const cartStore = useSelector(state => state)
     return (
         <Container>
             Your Cart
-            <p>Cart items: 10</p>
+            <p>Cart items: {cartStore.cart}</p>
         </Container>
     )
 }

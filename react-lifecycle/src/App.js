@@ -10,8 +10,12 @@ import {
 import "./App.css";
 import ProductDetails from "./component/client/ProductDetails";
 import Cart from "./component/client/Cart";
+import {useSelector} from "react-redux";
+
 
 function App() {
+    const cartStore = useSelector((state) => state)
+    console.log(cartStore);
     const [productList, setProducts] = useState([
         {
             name: "Product Name 1",
