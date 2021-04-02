@@ -27,7 +27,7 @@ const ProductDetails = ({productList}) => {
     const details = productList[param.id];
 
     return (
-        <Container>
+        <Container justify spacing>
             <Grid className={classes.root}>
                 <Grid item xs={12}>
                     <Grid  justify="center" spacing={2}>
