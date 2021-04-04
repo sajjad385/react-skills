@@ -1,13 +1,33 @@
-const INITIAL_STATE = {}
+import ActionType from "../actionTypes";
 
-const CartReducer = (state = INITIAL_STATE, action) => {
+const INITIAL = {
+    cart: []
+}
+
+const CartReducer = (state = INITIAL, action) => {
     switch (action.type) {
-        case 'ADD_TO_CART':
-            return {
-                ...state, cart : action.payload
-            }
+        case ActionType.ADD_TO_CART:
+            return {...state, cart: action.payload}
         default:
-            return INITIAL_STATE;
+            return INITIAL;
     }
 }
 export default CartReducer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    clear: both;
+    overflow-x:hidden;
+}
+.navbar{
+    width: 100%;
+    background-color: orangered;
+    text-align: right;
+}
+.menu {
+    padding: 20px;
+}
+.link {
+     padding: 10px;
+}
