@@ -48,7 +48,7 @@ const Product = ({productList}) => {
     const addToCart =()=>{
         dispatch({
             type: 'ADD_TO_CART',
-            payload: cartStore.cartStore.cart ?cartStore.cartStore.cart +1: 1
+            payload: cartStore.cartStore.cart ? cartStore.cartStore.cart +1: 1
         })
     }
 

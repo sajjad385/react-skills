@@ -3,7 +3,6 @@ import ActionType from "../actionTypes";
 const INITIAL = {
     selectedProduct: [],
     productList: [],
-    cart: []
 }
 const ProductReducer = (state = INITIAL, action) => {
     switch (action.type) {
@@ -12,7 +11,7 @@ const ProductReducer = (state = INITIAL, action) => {
         case ActionType.STORE_ALL_PRODUCT:
             return {...state, productList: action.payload}
         default:
-            return INITIAL;
+            return state;
     }
 }
 export default ProductReducer

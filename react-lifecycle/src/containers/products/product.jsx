@@ -31,13 +31,15 @@ const Product = ({productList}) => {
 
     const cartStore = useSelector(state => state)
 
-    console.log(cartStore,"===cartStore")
+    console.log(cartStore.cartStore.cart,"===cart Data")
+
+
     const addToCart =()=>{
         dispatch({
-            type: 'ADD_TO_CART',
-            payload: cartStore.cartStore.cart ?cartStore.cartStore.cart +1: 1
+            type: ActionType.ADD_TO_CART,
+            payload: parseInt(cartStore.cartStore.cart) ? parseInt(cartStore.cartStore.cart) + 1 : 1
         })
-        console.log(cartStore)
+
     }
     return (
         <div className="container">

@@ -8,6 +8,7 @@ import {storeSelectedProduct} from "../../store/Actions/productAction";
 
 const ProductDetails = () => {
     const dispatch = useDispatch();
+
     //selected or single product get
     const details = useSelector(state => state.productStore.selectedProduct)
     const [loading, setLoading] = useState(true);
