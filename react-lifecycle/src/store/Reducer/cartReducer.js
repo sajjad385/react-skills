@@ -1,8 +1,8 @@
 import ActionType from "../actionTypes";
 
 const INITIAL = {
-    cart: [],
-    cartProduct:[]
+    cart: 0,
+    product:[]
 }
 
 const CartReducer = (state = INITIAL, action) => {
@@ -10,8 +10,8 @@ const CartReducer = (state = INITIAL, action) => {
     switch (action.type) {
         case ActionType.ADD_TO_CART:
             return {...state,
-                cart: action.payload,
-                cartProduct:action.payload.product}
+                cart: action.payload.cart,
+                product:action.payload.product}
         default:
             return state;
     }

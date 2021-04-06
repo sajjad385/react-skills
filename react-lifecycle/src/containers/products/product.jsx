@@ -4,8 +4,9 @@ import Loader from "../../component/loader/loader";
 import axios from "axios";
 import style from './style.css'
 import {useDispatch, useSelector} from "react-redux";
-import {storeAllProduct} from "../../store/Actions/productAction";
+import {storeAllProduct, storeSelectedProduct} from "../../store/Actions/productAction";
 import ActionType from "../../store/actionTypes";
+import {storeCartProduct} from "../../store/Actions/cartAction";
 
 
 const Product = ({productList}) => {
@@ -29,17 +30,24 @@ const Product = ({productList}) => {
         history.push(`/product-details/${id}`);
     };
 
-    const cartStore = useSelector(state => state)
+    const cartStore = useSelector(state => state.cartStore)
+    console.log(cartStore, "====cartStore")
+    const addToCart = (id) => {
+        axios.get(`https://fakestoreapi.com/products/${id}`)
+            .then((response) => {
+                console.log(response.data)
+                var cartData = {
+                    product: cartStore.product ?
+                        [response.data,
+                            ...cartStore.product]
+                        : [response.data],
+                    cart: parseInt(cartStore.cart) ? parseInt(cartStore.cart) + 1 : 1
+                }
 
-    console.log(cartStore.cartStore.cart,"===cart Data")
-
-
-    const addToCart =()=>{
-        dispatch({
-            type: ActionType.ADD_TO_CART,
-            payload: parseInt(cartStore.cartStore.cart) ? parseInt(cartStore.cartStore.cart) + 1 : 1
+                dispatch(storeCartProduct(cartData));
+            }).catch((error) => {
+            console.log(error)
         })
-
     }
     return (
         <div className="container">
@@ -52,7 +60,7 @@ const Product = ({productList}) => {
                         <p onClick={() => handleChange(product.id)}
                            style={{cursor: 'pointer'}}>{product.title.slice(0, 20)}</p>
                         <p>{product.price}</p>
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <button onClick={() => addToCart(product.id)}>Add to Cart</button>
                         <button onClick={() => handleChange(product.id)}>Show Details</button>
                     </div>
                 ))

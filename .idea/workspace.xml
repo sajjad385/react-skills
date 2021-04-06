@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1735a1ba-381a-435f-8b66-beb5c60010dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-lifecycle/src/component/client/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/component/client/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-lifecycle/src/containers/cart/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/containers/cart/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-lifecycle/src/containers/products/product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/containers/products/product.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/cartReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/productReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/productReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,11 @@
       <workItem from="1617375764960" duration="6926000" />
       <workItem from="1617525738924" duration="2903000" />
       <workItem from="1617564062456" duration="5932000" />
-      <workItem from="1617605307097" duration="2260000" />
+      <workItem from="1617605307097" duration="4930000" />
+      <workItem from="1617613857166" duration="553000" />
+      <workItem from="1617625084428" duration="1700000" />
+      <workItem from="1617694806690" duration="1212000" />
+      <workItem from="1617722413631" duration="5908000" />
     </task>
     <servers />
   </component>
