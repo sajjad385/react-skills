@@ -43,7 +43,6 @@ const Product = ({productList}) => {
                         : [response.data],
                     cart: parseInt(cartStore.cart) ? parseInt(cartStore.cart) + 1 : 1
                 }
-
                 dispatch(storeCartProduct(cartData));
             }).catch((error) => {
             console.log(error)

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1735a1ba-381a-435f-8b66-beb5c60010dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-lifecycle/src/containers/cart/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/containers/cart/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-lifecycle/src/containers/products/product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/containers/products/product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-lifecycle/src/store/Reducer/cartReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -80,7 +79,10 @@
       <workItem from="1617613857166" duration="553000" />
       <workItem from="1617625084428" duration="1700000" />
       <workItem from="1617694806690" duration="1212000" />
-      <workItem from="1617722413631" duration="5908000" />
+      <workItem from="1617722413631" duration="6422000" />
+      <workItem from="1617834182350" duration="626000" />
+      <workItem from="1617988782402" duration="589000" />
+      <workItem from="1618073659415" duration="1236000" />
     </task>
     <servers />
   </component>
