@@ -12,19 +12,12 @@ import {storeCartProduct} from "../../store/Actions/cartAction";
 const Product = ({productList}) => {
     const dispatch = useDispatch();//store data in reduxStore
     const products = useSelector(state => state.productStore.productList);
-    const [loading, setLoading] = useState(true);
+    const {loading} = useSelector(state => state.loaderStore);
 
     useEffect(() => {
-        axios
-            .get("https://fakestoreapi.com/products")
-            .then((response) => {
-                setLoading(false);
-                dispatch(storeAllProduct(response.data))
-            })
-            .catch((error) => {
-                // console.log(error.response);
-            });
+        dispatch(storeAllProduct());
     }, []);
+
     const history = useHistory();
     const handleChange = (id) => {
         history.push(`/product-details/${id}`);

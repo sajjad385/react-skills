@@ -2,6 +2,7 @@ const ActionType = {
     STORE_SELECTED_PRODUCT: 'STORE_SELECTED_PRODUCT',
     STORE_ALL_PRODUCT: 'STORE_ALL_PRODUCT',
     ADD_TO_CART: 'ADD_TO_CART',
+    LOADER: 'LOADER',
 
 }
 export default ActionType
